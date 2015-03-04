@@ -1,0 +1,154 @@
+.item_raw,
+.item_access,
+.item_modify,
+.item_attrib,
+.item_close_write,
+.item_close_nowrite,
+.item_close,
+.item_open,
+.item_moved_to,
+.item_moved_from,
+.item_move,
+.item_move_self,
+.item_create,
+.item_delete,
+.item_delete_self,
+.item_unmount
+{
+  margin: 10px;
+  margin-left: 30px;
+  padding: 5px;
+
+  font-family: monospace;
+
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+        background-color: #e5b5c4;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+        background-color: #e5b5c4;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { [> Safari and Chrome <]
+    from {
+        opacity:0;
+        background-color: #e5b5c4;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { [> Opera <]
+    from {
+        opacity:0;
+        background-color: #e5b5c4; 
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.item_raw {
+  background-color: #baddda;
+}
+
+.item_access {
+  background-color : white;
+}
+
+.item_modify {
+  background-color : #ead891;
+}
+
+.item_attrib {
+  background-color : white;
+}
+
+.item_close_write {
+  background-color : white;
+}
+
+.item_close_nowrite {
+  background-color : white;
+}
+
+.item_close {
+  background-color : white;
+}
+
+.item_open {
+  background-color : white;
+}
+
+.item_moved_to {
+  background-color : #a9dff9;
+}
+
+.item_moved_from {
+  background-color : #a9dff9;
+}
+
+.item_move {
+  background-color : #d9dba0;
+}
+
+.item_move_self {
+  background-color : #d9dba0;
+}
+
+.item_create {
+  background-color : #9befb7;
+}
+
+.item_delete {
+  background-color : #f7b2b2;
+}
+
+.item_delete_self {
+  background-color : #f7b2b2;
+}
+
+.item_unmount {
+  background-color : white;
+}
+
+
+.time {
+  padding-left: 50px;
+  display: block;
+  float: left;
+}
+
+.action {
+  padding-left: 20px;
+  display: block;
+  float: left;
+  width: 50pt;
+}
+.directory {
+  padding-left: 20px;
+  display: inline;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.name {
+  display: inline;
+  font-weight: bold;
+}
