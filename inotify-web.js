@@ -10,7 +10,11 @@ inotifyClient.prototype.parseConfig = function (){
   for(var i in this.config.excludes)
     params.push('@' + this.config.excludes[i]);
   params = params.concat(this.config.paths);
-  
+  params.push('--timefmt');
+  params.push('%T');
+  params.push('--format');
+  params.push("'%T %w %e %f'");
+ 
   return params;
 };
 
@@ -28,7 +32,7 @@ inotifyClient.prototype.start = function(onDataCallback, onEndCallback) {
 };
 
 inotifyClient.prototype.parseOutput = function(outputString) {
-  var re = /(.*) (ACCESS|MODIFY|ATTRIB|CLOSE_WRITE|CLOSE_NOWRITE|CLOSE|OPEN|MOVED_TO|MOVED_FROM|MOVE|MOVE_SELF|CREATE|DELETE|DELETE_SELF|UNMOUNT) (.*)/; 
+  var re = /(\d\d:\d\d:\d\d) (.*) (ACCESS|MODIFY|ATTRIB|CLOSE_WRITE|CLOSE_NOWRITE|CLOSE|OPEN|MOVED_TO|MOVED_FROM|MOVE|MOVE_SELF|CREATE|DELETE|DELETE_SELF|UNMOUNT|DELETE,ISDIR|CREATE,ISDIR|ACCESS,ISDIR|OPEN,ISDIR) (.*)/;
   var match = re.exec(outputString);
 
   var parsedOutput;
@@ -39,9 +43,10 @@ inotifyClient.prototype.parseOutput = function(outputString) {
   }
   else {
     parsedOutput = {
-      directory: match[1],
-      action: match[2],
-      name: match[3],
+      time: match[1],
+      directory: match[2],
+      action: match[3],
+      name: match[4],
     };
   }
 

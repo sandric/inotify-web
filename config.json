@@ -9,9 +9,25 @@
     "moved_from"
   ],
   "paths": [
-    "/home"
+    "/home",
+    "/bin",
+    "/sbin",
+    "/lib",
+    "/lib64",
+    "/opt",
+    "/srv",
+    "/usr",
+    "/var"
   ],
   "excludes": [
-    "/home/sandric/inotify-web"
+    "/home/sandric/inotify-web",
+    "/home/sandric/.config/google-chrome-unstable",
+    "/home/sandric/.cache/google-chrome-unstable",
+    "/home/sandric/.config/fish",
+    "/var/lock",
+    "/var/run",
+    "/var/tmp",
+    "/var/log/journal",
+    "/var/lib/postgres/data/pg_stat_tmp"
   ]
 }

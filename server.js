@@ -28,7 +28,7 @@ fs.readFile('./styles.css', function (err, css) {
       } else {
         resultingString = "<div class = 'item_" + data.action.toLowerCase().replace(/,.*/, "") + "'>";
         
-        resultingString += "<div class = 'time'>" + 'sometime...' + "</div>";
+        resultingString += "<div class = 'time'>" + data.time + "</div>";
         resultingString += "<div class = 'action'>" + data.action + "</div>";
         resultingString += "<div class = 'directory'>" + data.directory + "</div>";
         resultingString += "<div class = 'name'>" + data.name + "</div>";
