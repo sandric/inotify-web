@@ -32,7 +32,7 @@ inotifyClient.prototype.start = function(onDataCallback, onEndCallback) {
 };
 
 inotifyClient.prototype.parseOutput = function(outputString) {
-  var re = /(\d\d:\d\d:\d\d) (.*) (ACCESS|MODIFY|ATTRIB|CLOSE_WRITE|CLOSE_NOWRITE|CLOSE|OPEN|MOVED_TO|MOVED_FROM|MOVE|MOVE_SELF|CREATE|DELETE|DELETE_SELF|UNMOUNT|DELETE,ISDIR|CREATE,ISDIR|ACCESS,ISDIR|OPEN,ISDIR) (.*)/;
+  var re = /(\d\d:\d\d:\d\d) (.*) (ACCESS|MODIFY|ATTRIB|CLOSE_WRITE|CLOSE_NOWRITE|CLOSE|OPEN|MOVED_TO|MOVED_FROM|MOVE|MOVE_SELF|CREATE|DELETE|DELETE_SELF|UNMOUNT|DELETE,ISDIR|CREATE,ISDIR|ACCESS,ISDIR|OPEN,ISDIR|MOVED_TO,ISDIR|MOVED_FROM,ISDIR) (.*)/;
   var match = re.exec(outputString);
 
   var parsedOutput;
