@@ -15,7 +15,10 @@ fs.readFile('./styles.css', function (err, css) {
   console.log('Server running at http://' + host + ':' + port);
 
   http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.setHeader('Connection', 'Transfer-Encoding');
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.setHeader('Transfer-Encoding', 'chunked');
+
     res.write("<style>" + css  + "</style>");
 
     eInotifyClient.start(function(data){
@@ -41,5 +44,7 @@ fs.readFile('./styles.css', function (err, css) {
       res.write(resultingString);
     }, function(code){
     });
+  }).on('connection', function(socket) {
+    socket.setTimeout(3600000);
   }).listen(port, host);
 });
