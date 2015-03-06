@@ -15,9 +15,9 @@
 .item_delete_self,
 .item_unmount
 {
-  margin: 10px;
-  margin-left: 30px;
-  padding: 5px;
+  margin: 3pt;;
+  margin-left: 30pt;
+  padding: 5pt;
 
   font-family: monospace;
 
@@ -130,19 +130,19 @@
 
 
 .time {
-  padding-left: 50px;
+  padding-left: 50pt;
   display: block;
   float: left;
 }
 
 .action {
-  padding-left: 20px;
+  padding-left: 20pt;
   display: block;
   float: left;
   width: 50pt;
 }
 .directory {
-  padding-left: 50px;
+  padding-left: 50pt;
   display: inline;
   font-weight: bold;
   text-decoration: underline;
